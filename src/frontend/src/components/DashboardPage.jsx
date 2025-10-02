@@ -1,4 +1,4 @@
-import './DashboardPage.css'
+import './DashboardPage.css';
 
 const DashboardPage = ({ user, onLogout }) => {
   return (
@@ -16,7 +16,7 @@ const DashboardPage = ({ user, onLogout }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardPage
+export default DashboardPage;

@@ -1,31 +1,31 @@
-import { useState } from 'react'
-import authService from '../services/authService'
-import './LoginPage.css'
+import { useState } from 'react';
+import authService from '../services/authService';
+import './LoginPage.css';
 
 const LoginPage = ({ onLogin }) => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
-    setLoading(true)
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
 
     try {
-      const result = await authService.login(username, password)
+      const result = await authService.login(username, password);
       if (result.status === 'success') {
-        onLogin({ username })
+        onLogin({ username });
       } else {
-        setError(result.message || 'Invalid credentials')
+        setError(result.message || 'Invalid credentials');
       }
     } catch (err) {
-      setError(err.message || 'An error occurred during login')
+      setError(err.message || 'An error occurred during login');
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="login-container">
@@ -38,7 +38,7 @@ const LoginPage = ({ onLogin }) => {
               type="text"
               id="username"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={e => setUsername(e.target.value)}
               required
             />
           </div>
@@ -48,7 +48,7 @@ const LoginPage = ({ onLogin }) => {
               type="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
               required
             />
           </div>
@@ -59,7 +59,7 @@ const LoginPage = ({ onLogin }) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
