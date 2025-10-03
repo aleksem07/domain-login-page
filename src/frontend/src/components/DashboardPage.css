@@ -23,7 +23,8 @@
 }
 
 .dashboard-header button {
-  width: auto;
+  margin-left: auto;
+  width: max-content;
   padding: 0.5rem 1rem;
   background-color: #ff4d4d;
 }

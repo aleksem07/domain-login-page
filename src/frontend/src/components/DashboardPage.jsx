@@ -2,20 +2,36 @@ import './DashboardPage.css';
 
 const DashboardPage = ({ user, onLogout }) => {
   return (
-    <div className="dashboard-container">
+    <section className="dashboard-container">
+      <header className="dashboard-header">
+        <button onClick={onLogout}>Выйти</button>
+      </header>
+
       <div className="dashboard-header">
         <h1>Добро пожаловать, {user?.username}!</h1>
-        <button onClick={onLogout}>Выйти</button>
       </div>
+
       <div className="dashboard-content">
-        <h2>Тестовая страница</h2>
-        <p>Вы успешно вошли в систему.</p>
         <div className="info-box">
-          <h3>Информация о пользователе:</h3>
-          <p>Имя пользователя: {user?.username}</p>
+          <h2>Тестовая страница</h2>
+          <p>Вы успешно вошли в систему.</p>
+        </div>
+
+        <div className="dashboard-site">
+          <ul className="site-list"> Список доступных сайтов:
+            <li>
+              <a href="#">Сайт 1</a>
+            </li>
+            <li>
+              <a href="#">Сайт 2</a>
+            </li>
+            <li>
+              <a href="#">Сайт 3</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
