@@ -9,6 +9,8 @@ const apiClient = axios.create({
   },
 });
 
+const AUTH_DATA_KEY = 'authData';
+
 class AuthService {
   async login(username, password) {
     try {
@@ -16,6 +18,14 @@ class AuthService {
         username,
         password,
       });
+
+      if (response.data.status === 'success') {
+        const authData = {
+          username,
+          timestamp: new Date().getTime(),
+        };
+        localStorage.setItem(AUTH_DATA_KEY, JSON.stringify(authData));
+      }
 
       return response.data;
     } catch (error) {
@@ -31,6 +41,23 @@ class AuthService {
         throw new Error('Ошибка при отправке запроса: ' + error.message);
       }
     }
+  }
+
+  // Check if user is authenticated
+  isAuthenticated() {
+    const authData = localStorage.getItem(AUTH_DATA_KEY);
+    return !!authData;
+  }
+
+  // Get user data from localStorage
+  getUserData() {
+    const authData = localStorage.getItem(AUTH_DATA_KEY);
+    return authData ? JSON.parse(authData) : null;
+  }
+
+  // Logout and clear stored data
+  logout() {
+    localStorage.removeItem(AUTH_DATA_KEY);
   }
 }
 
