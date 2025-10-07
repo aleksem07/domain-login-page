@@ -1,4 +1,5 @@
 import './DashboardPage.css';
+import { SITES } from '../constants/sites';
 
 const DashboardPage = ({ user, onLogout }) => {
   return (
@@ -18,16 +19,13 @@ const DashboardPage = ({ user, onLogout }) => {
         </div>
 
         <div className="dashboard-site">
-          <ul className="site-list"> Список доступных сайтов:
-            <li>
-              <a href="#">Сайт 1</a>
-            </li>
-            <li>
-              <a href="#">Сайт 2</a>
-            </li>
-            <li>
-              <a href="#">Сайт 3</a>
-            </li>
+          <ul className="site-list">
+            Список доступных сайтов:
+            {SITES.map((site, index) => (
+              <li key={index}>
+                <a href={site.url}>{site.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
