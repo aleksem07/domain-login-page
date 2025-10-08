@@ -67,3 +67,22 @@
   margin: 0.5rem 0;
   color: #666;
 }
+
+.site-viewer {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.site-viewer h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.site-iframe {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
