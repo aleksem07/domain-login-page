@@ -1,7 +1,6 @@
 export const SITES = [
-  { name: 'Сайт 1', url: '#' },
-  { name: 'Сайт 2', url: '#' },
-  { name: 'Сайт 3', url: '#' },
+  { name: 'deepseek', url: 'https://www.deepseek.com/en' },
+  { name: 'qwen', url: 'https://chat.qwen.ai/' },
 ];
 
 export default SITES;
