@@ -17,13 +17,18 @@ const DashboardPage = ({ user, onLogout }) => {
       </header>
 
       <div className="dashboard-content">
-
         <div className="dashboard-site">
           <ul className="site-list info-box">
             Список доступных сайтов:
             {SITES.map((site, index) => (
               <li key={index}>
-                <a href="#" onClick={(e) => { e.preventDefault(); handleSiteSelect(site); }}>
+                <a
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSiteSelect(site);
+                  }}
+                >
                   {site.name.toUpperCase()}
                 </a>
               </li>
