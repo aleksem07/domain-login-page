@@ -18,7 +18,7 @@
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .dashboard-header h1 {
@@ -37,9 +37,13 @@
   background-color: #e60000;
 }
 
+.dashboard-title {
+  font-size: 1.5rem;
+}
+
 .dashboard-content {
   background: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 1;
@@ -62,7 +66,6 @@
   border: 1px solid #91d5ff;
   border-radius: 4px;
   padding: 1rem;
-  margin-top: 1rem;
 }
 
 .info-box h3 {
@@ -76,8 +79,7 @@
 }
 
 .site-viewer {
-  margin-top: 2rem;
-  padding: 1rem;
+  margin-top: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 4px;
   flex: 1;
@@ -96,4 +98,17 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   flex: 1;
+}
+
+.site-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.active-site {
+  padding-inline: 0.5rem;
+  background-color: #bae7ff;
+  outline: 2px solid #40a9ff;
+  border-radius: 4px;
 }

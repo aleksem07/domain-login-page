@@ -12,7 +12,7 @@ const DashboardPage = ({ user, onLogout }) => {
   return (
     <section className="dashboard-container">
       <header className="dashboard-header">
-        <h1>Добро пожаловать, {user?.username}!</h1>
+        <h2 className="dashboard-title">Добро пожаловать, {user?.username}!</h2>
         <button onClick={onLogout}>Выйти</button>
       </header>
 
@@ -20,15 +20,20 @@ const DashboardPage = ({ user, onLogout }) => {
         <div className="dashboard-site">
           <ul className="site-list info-box">
             Список доступных сайтов:
-            {SITES.map((site, index) => (
-              <li key={index}>
+            {SITES.map(site => (
+              <li
+                key={site.url}
+                className={
+                  selectedSite && selectedSite.url === site.url
+                    ? 'active-site'
+                    : ''
+                }>
                 <a
                   href="#"
                   onClick={e => {
                     e.preventDefault();
                     handleSiteSelect(site);
-                  }}
-                >
+                  }}>
                   {site.name.toUpperCase()}
                 </a>
               </li>
@@ -38,7 +43,6 @@ const DashboardPage = ({ user, onLogout }) => {
 
         {selectedSite && (
           <div className="site-viewer">
-            <h3>Просмотр сайта: {selectedSite.name}</h3>
             <iframe
               src={selectedSite.url}
               title={selectedSite.name}
