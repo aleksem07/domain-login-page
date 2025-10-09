@@ -1,4 +1,4 @@
-import './DashboardPage.css';
+import './DashboardPage.scss';
 import { SITES } from '../constants/sites';
 import { useState } from 'react';
 

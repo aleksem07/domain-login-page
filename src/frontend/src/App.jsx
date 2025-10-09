@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import LoginPage from './components/LoginPage';
 import DashboardPage from './components/DashboardPage';
 import authService from './services/authService';
-import './App.css';
+import './App.scss';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

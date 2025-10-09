@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import authService from '../services/authService';
-import './LoginPage.css';
+import './LoginPage.scss';
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
