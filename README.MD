@@ -5,26 +5,26 @@ Flask-приложение для аутентификации через LDAP/A
 ## Установка
 
 1. Создайте виртуальное окружение:
-   ```python -m venv venv``` или ```py -3.12 -m venv venv```
+   `python -m venv venv` или `py -3.12 -m venv venv`
 2. Активируйте его:
-    ```Windows: venv\Scripts\activate```
-    ```Linux/macOS: source venv/bin/activate```
+   `Windows: venv\Scripts\activate`
+   `Linux/macOS: source venv/bin/activate`
 3. Установите зависимости:
-    ```pip install -r requirements.txt```
+   `pip install -r requirements.txt`
 4. Настройте .env:
-    ```cp env.example .env```
+   `cp env.example .env`
 5. отредактируйте .env
 6. Запустите backend:
-    ```python run.py```
- 
+   `python run.py`
+
 ## Запуск Frontend
 
 1. Перейдите в директорию frontend:
-  ```cd src/frontend```
+   `cd src/frontend`
 2. Установите зависимости:
-  ```npm install```
+   `npm install`
 3. Запустите frontend:
-  ```npm run dev```
+   `npm run dev`
 
 ## Использование
 
@@ -34,3 +34,17 @@ Flask-приложение для аутентификации через LDAP/A
    - По имени хоста: http://[hostname]:3000
 2. Введите учетные данные для входа
 3. При успешной аутентификации вы будете перенаправлены на тестовую страницу
+
+## Форматирование кода
+
+Проект использует Prettier для автоматического форматирования кода. Для настройки автоматического форматирования при сохранении файлов:
+
+1. Убедитесь, что в VS Code установлено расширение Prettier ESLint
+2. Файл конфигурации `.prettierrc` уже настроен в проекте
+3. Конфигурация VS Code в `.vscode/settings.json` настроена для автоматического форматирования при сохранении
+
+Для ручного форматирования кода используйте команду:
+
+```bash
+npm run format
+```

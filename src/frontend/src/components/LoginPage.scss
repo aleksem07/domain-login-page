@@ -7,7 +7,7 @@
 }
 
 .login-form {
-  background: white;
+  background: $background-light;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -18,7 +18,7 @@
 .login-form h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: $text-gray;
 }
 
 .form-group {
@@ -28,52 +28,52 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #555;
+  font-weight: $font-weight-medium;
+  color: $text-gray-light;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid $border-color;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: $font-size-base;
   box-sizing: border-box;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #646cff;
+  border-color: $secondary-color;
   box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
 }
 
 button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #40b636;
-  color: white;
+  background-color: $primary-color;
+  color: $white;
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #194e15;
+  background-color: $primary-dark;
 }
 
 button:disabled {
-  background-color: #cccccc;
+  background-color: $gray;
   cursor: not-allowed;
 }
 
 .error-message {
-  color: #ff0000;
+  color: $danger-color;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  background-color: #ffe6e6;
+  background-color: $background-red;
   border-radius: 4px;
   text-align: center;
 }

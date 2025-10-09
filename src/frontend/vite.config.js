@@ -5,6 +5,13 @@ import { hostname } from 'os';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/styles/styles.scss";`,
+      },
+    },
+  },
   server: {
     host: '0.0.0.0',
     port: 3000,

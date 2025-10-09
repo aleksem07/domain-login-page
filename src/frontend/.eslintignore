@@ -7,4 +7,3 @@ build/
 .env.test.local
 .env.production.local
 README.md
-vite.config.js

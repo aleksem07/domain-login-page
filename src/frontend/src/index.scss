@@ -1,11 +1,12 @@
+// Глобальные стили
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: $font-family-base;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: $font-weight-normal;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: $text-light;
+  background-color: $background-dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,13 +15,32 @@
   -webkit-text-size-adjust: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
 a {
-  font-weight: 500;
-  color: #646cff;
+  font-weight: $font-weight-medium;
+  color: $secondary-color;
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #40b636;
+  color: $primary-color;
 }
 
 ul,
@@ -32,7 +52,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 390px;
+  min-width: $screen-xs;
   min-height: 100vh;
 }
 
@@ -40,16 +60,18 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
-  border-color: #40b636;
+  border-color: $primary-color;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -57,13 +79,15 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: $text-dark;
+    background-color: $background-light;
   }
+
   a:hover {
-    color: #40b636;
+    color: $primary-color;
   }
+
   button {
-    background-color: #216d25;
+    background-color: $primary-dark;
   }
 }
