@@ -5,33 +5,31 @@ import { useState } from 'react';
 const DashboardPage = ({ user, onLogout }) => {
   const [selectedSite, setSelectedSite] = useState(null);
 
-  const handleSiteSelect = (site) => {
+  const handleSiteSelect = site => {
     setSelectedSite(site);
   };
 
   return (
     <section className="dashboard-container">
       <header className="dashboard-header">
+        <h1>Добро пожаловать, {user?.username}!</h1>
         <button onClick={onLogout}>Выйти</button>
       </header>
 
-      <div className="dashboard-header">
-        <h1>Добро пожаловать, {user?.username}!</h1>
-      </div>
-
       <div className="dashboard-content">
-        <div className="info-box">
-          <h2>Тестовая страница</h2>
-          <p>Вы успешно вошли в систему.</p>
-        </div>
-
         <div className="dashboard-site">
-          <ul className="site-list">
+          <ul className="site-list info-box">
             Список доступных сайтов:
             {SITES.map((site, index) => (
               <li key={index}>
-                <a href="#" onClick={(e) => { e.preventDefault(); handleSiteSelect(site); }}>
-                  {site.name}
+                <a
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleSiteSelect(site);
+                  }}
+                >
+                  {site.name.toUpperCase()}
                 </a>
               </li>
             ))}

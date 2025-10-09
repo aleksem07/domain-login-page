@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { HOSTNAME } from 'os'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { hostname } from 'os';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,15 +13,15 @@ export default defineConfig({
       'localhost',
       '127.0.0.1',
       '::1',
-      HOSTNAME,
-      `${HOSTNAME}.local`,
+      hostname(),
+      `${hostname()}.local`,
     ],
     proxy: {
       '/auth': {
         target: 'http://localhost:5000',
         changeOrigin: true,
-        secure: false
-      }
-    }
-  }
-})
+        secure: false,
+      },
+    },
+  },
+});
