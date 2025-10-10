@@ -12,6 +12,7 @@ def auth():
     
     if not data or 'username' not in data or 'password' not in data:
         logger.warning("Missing username or password in request")
+        logger.info("Response status: 400")
         return jsonify({'error': 'Missing username or password'}), 400
 
     username = data['username']
@@ -19,14 +20,19 @@ def auth():
 
     try:
         if authenticate_user(username, password):
+            logger.info(f"User {username} authenticated successfully")
+            logger.info("Response status: 200")
             return jsonify({'status': 'success', 'message': 'Authenticated'}), 200
         else:
+            logger.warning(f"Invalid credentials for user {username}")
+            logger.info("Response status: 401")
             return jsonify({'status': 'error', 'message': 'Invalid credentials'}), 401
 
     except Exception as e:
         logger.exception("Authentication failed with exception")
+        logger.info(f"Response status: 500")
         return jsonify({
-            'status': 'error', 
-            'message': 'Authentication failed', 
+            'status': 'error',
+            'message': 'Authentication failed',
             'details': str(e)
         }), 500

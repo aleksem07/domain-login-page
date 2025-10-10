@@ -1,10 +1,9 @@
 from ldap3 import Server, Connection, ALL, NTLM
 from .config import Config
-import logging
-
-logger = logging.getLogger(__name__)
+from .user_logger import get_user_logger
 
 def authenticate_user(username: str, password: str) -> bool:
+    logger = get_user_logger(username)
     user_principal = f"{Config.AD_DOMAIN}\\{username}"
 
     logger.info(f"Attempting to authenticate user: {user_principal}")

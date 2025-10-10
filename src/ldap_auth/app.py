@@ -12,8 +12,8 @@ def create_app():
     return app
 
 def setup_logging():
-    log_level = logging.DEBUG if Config.DEBUG else logging.INFO
     os.makedirs('logs', exist_ok=True)
+    log_level = logging.DEBUG if Config.DEBUG else logging.INFO
     logging.basicConfig(
         level=log_level,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
